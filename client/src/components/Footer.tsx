@@ -22,7 +22,7 @@ export default function Footer() {
             >
               Andrew Rimmer
             </a>
-            {' '}as a fan project. Not affiliated with or endorsed by Jon Skeet.
+            {' '}as a side project. Not affiliated with or endorsed by Jon Skeet.
           </p>
           <p>
             Powered by the{' '}

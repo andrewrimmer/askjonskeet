@@ -46,8 +46,8 @@ public class IndexingService : BackgroundService
         }
         else
         {
-            _logger.LogInformation("Existing index found. Running incremental update...");
-            await IncrementalUpdate(stoppingToken);
+            _logger.LogInformation("Existing index found. Skipping startup indexing; scheduled updates will handle it.");
+            _lastFullRebuild = DateTime.UtcNow;
         }
 
         // Main loop: incremental every hour, full rebuild every week

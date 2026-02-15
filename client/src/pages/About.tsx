@@ -51,7 +51,7 @@ export default function About() {
           </a>
           -style search engine specifically for Jon Skeet's Stack Overflow answers. The
           original version was an ASP.NET app using Lucene to spider Stack Overflow and
-          build searchable indexes. It was a fan project, built out of genuine appreciation
+          build searchable indexes. It was a side project, built out of genuine appreciation
           for the quality of his contributions.
         </p>
 
@@ -132,7 +132,7 @@ export default function About() {
           >
             Andrew Rimmer
           </a>{' '}
-          as a fan project. This site is not affiliated with or endorsed by Jon Skeet.
+          as a side project. This site is not affiliated with or endorsed by Jon Skeet.
           Powered by the{' '}
           <a
             href="https://api.stackexchange.com/"
