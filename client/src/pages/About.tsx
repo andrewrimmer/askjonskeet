@@ -133,7 +133,7 @@ export default function About() {
             Andrew Rimmer
           </a>{' '}
           as a side project. This site is not affiliated with or endorsed by Jon Skeet.
-          Powered by the{' '}
+          Built on data from the{' '}
           <a
             href="https://api.stackexchange.com/"
             className="text-skeet-orange hover:underline"

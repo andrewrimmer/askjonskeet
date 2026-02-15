@@ -25,7 +25,7 @@ export default function Footer() {
             {' '}as a side project. Not affiliated with or endorsed by Jon Skeet.
           </p>
           <p>
-            Powered by the{' '}
+            Built on data from the{' '}
             <a
               href="https://api.stackexchange.com/"
               className="text-gray-400 hover:text-skeet-orange transition-colors"
