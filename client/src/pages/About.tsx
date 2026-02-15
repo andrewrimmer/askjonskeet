@@ -50,16 +50,17 @@ export default function About() {
             Ask Jeeves
           </a>
           -style search engine specifically for Jon Skeet's Stack Overflow answers. The
-          original version used Simple.Web and Lucene to spider Stack Overflow and build
-          searchable indexes. It was a fan project, built out of genuine appreciation for
-          the quality of his contributions.
+          original version was an ASP.NET app using Lucene to spider Stack Overflow and
+          build searchable indexes. It was a fan project, built out of genuine appreciation
+          for the quality of his contributions.
         </p>
 
         <p>
-          In 2026, the site was reengineered with a simpler, modern stack: a
-          single-page React app that queries the Stack Exchange API directly from
-          your browser. No backend, no spider, no index. Just you, the API, and
-          the collected wisdom of Jon Skeet.
+          In 2026, the site was reengineered as a modern .NET 10 application
+          with a React frontend. It still uses Lucene under the hood, but now
+          powered by Lucene.NET with a full index of every Jon Skeet answer.
+          A background service keeps the index fresh from the Stack Exchange API,
+          so searches are fast and comprehensive.
         </p>
 
         <h3 className="text-lg font-semibold text-gray-900 pt-2">The Legend</h3>
