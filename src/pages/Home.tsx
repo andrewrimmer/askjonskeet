@@ -36,6 +36,13 @@ export default function Home() {
   useEffect(() => {
     if (queryFromUrl) {
       doSearch(queryFromUrl, 1)
+    } else {
+      // Reset to hero state when navigating back to /
+      setResults([])
+      setHasSearched(false)
+      setHasMore(false)
+      setError(null)
+      setPage(1)
     }
   }, [queryFromUrl, doSearch])
 
