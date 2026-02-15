@@ -1,43 +1,40 @@
-name: Deploy to GitHub Pages
+name: Deploy to Azure App Service
 
 on:
   push:
     branches: [main]
   workflow_dispatch:
 
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: pages
-  cancel-in-progress: false
-
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v4
 
+      # Build the React client
       - uses: actions/setup-node@v4
         with:
           node-version: 22
           cache: npm
+          cache-dependency-path: client/package-lock.json
 
       - run: npm ci
+        working-directory: client
+
       - run: npm run build
+        working-directory: client
 
-      - uses: actions/upload-pages-artifact@v3
+      # Build and publish the .NET app
+      - uses: actions/setup-dotnet@v4
         with:
-          path: dist
+          dotnet-version: '10.0.x'
 
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - id: deployment
-        uses: actions/deploy-pages@v4
+      - run: dotnet publish -c Release -o publish
+
+      # Deploy to Azure
+      - uses: azure/webapps-deploy@v3
+        with:
+          app-name: askjonskeet
+          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
+          package: publish
