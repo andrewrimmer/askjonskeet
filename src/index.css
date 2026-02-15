@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gray-50 text-gray-900 antialiased;
+  }
+}
+
+@layer components {
+  .tag-pill {
+    @apply inline-block bg-sky-100 text-sky-800 text-xs px-2 py-0.5 rounded font-mono;
+  }
+}
+
+@layer utilities {
+  .avatar-glow {
+    box-shadow: 0 0 0 4px rgba(244, 128, 36, 0.25), 0 0 24px rgba(244, 128, 36, 0.15);
+  }
+}
+
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in-up {
+  animation: fade-in-up 0.4s ease-out;
+}
