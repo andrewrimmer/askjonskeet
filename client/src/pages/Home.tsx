@@ -74,6 +74,7 @@ export default function Home() {
             </h2>
             <p className="text-gray-400 max-w-md mx-auto mb-8 text-sm sm:text-base leading-relaxed">
               Thousands of answers. One legendary engineer.
+              <br />
               Search the most prolific knowledge base on Stack Overflow.
             </p>
 
